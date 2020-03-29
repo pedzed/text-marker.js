@@ -1,0 +1,22 @@
+{
+  "name": "text-marker",
+  "version": "0.1.0",
+  "description": "A JavaScript text marking library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedzed/text-marker.js.git"
+  },
+  "author": "pedzed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pedzed/text-marker.js/issues"
+  },
+  "homepage": "https://github.com/pedzed/text-marker.js#readme",
+  "devDependencies": {
+    "jest": "^25.2.3"
+  }
+}
