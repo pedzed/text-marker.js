@@ -1,8 +1,8 @@
 {
-  "name": "text-marker",
+  "name": "text-marker.js",
   "version": "0.1.0",
   "description": "A JavaScript text marking library.",
-  "main": "index.js",
+  "main": "dist/text_marker.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "tdd": "npm run test -- --watch --notify",
