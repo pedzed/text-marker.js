@@ -97,4 +97,4 @@ class TextMarker
     }
 }
 
-module.exports = TextMarker;
+export default TextMarker;

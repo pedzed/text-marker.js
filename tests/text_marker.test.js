@@ -1,4 +1,4 @@
-const TextMarker = require('./../src/text_marker.js');
+import TextMarker from '../src/text_marker.mjs';
 
 /**
  * The string 'A carpet is an awesome object' can be divided into character indexes:

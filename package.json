@@ -4,7 +4,14 @@
   "description": "A JavaScript text marking library.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "tdd": "npm run test -- --watch --notify",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +24,10 @@
   },
   "homepage": "https://github.com/pedzed/text-marker.js#readme",
   "devDependencies": {
-    "jest": "^25.2.3"
+    "babel-jest": "^25.2.3",
+    "cross-env": "^7.0.2",
+    "jest": "^25.2.3",
+    "laravel-mix": "^5.0.4",
+    "vue-template-compiler": "^2.6.11"
   }
 }
