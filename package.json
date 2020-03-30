@@ -29,8 +29,5 @@
     "jest": "^25.2.3",
     "laravel-mix": "^5.0.4",
     "vue-template-compiler": "^2.6.11"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
