@@ -39,7 +39,7 @@ class TextMarking
     get openingMarker()
     {
         // WARN: No XSS protection applied
-        return `<mark style="background-color: ${this.color};">`;
+        return `<mark class="tm-mark" style="--tm-color: ${this.color};">`;
     }
 
     get closingMarker()

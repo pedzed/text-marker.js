@@ -9,7 +9,7 @@ let mix = require('laravel-mix');
  |
  */
 mix.setPublicPath('dist/');
-mix.js('src/text_marker.mjs', 'dist/');
+mix.js('src/*', 'dist/');
 
 // Full API
 // mix.js(src, output);

@@ -1,4 +1,4 @@
-import TextMarker from '../src/text_marker.mjs';
+import TextMarker from '../src/text-marker.mjs';
 
 /**
  * The string 'A carpet is an awesome object' can be divided into character indexes:
@@ -40,7 +40,7 @@ test('multiple markings can be added', () => {
     expect(textMarker.markings[1].endIndex).toBe(8);
     expect(textMarker.markings[1].color).toBe('yellow');
 
-    const expectedHtml = '<mark style="background-color: red;">A</mark> <mark style="background-color: yellow;">carpet</mark> is an awesome object';
+    const expectedHtml = '<mark class="tm-mark" style="--tm-color: red;">A</mark> <mark class="tm-mark" style="--tm-color: yellow;">carpet</mark> is an awesome object';
 
     expect(textMarker.text).toBe(expectedHtml);
 });
@@ -52,7 +52,7 @@ test('markings can overlap', () => {
     textMarker.addMarking([2, 8], 'yellow');
     textMarker.addMarking([2, 5], 'green');
 
-    const expectedHtml = 'A <mark style="background-color: yellow;"><mark style="background-color: green;">car</mark>pet</mark> is an awesome object';
+    const expectedHtml = 'A <mark class="tm-mark" style="--tm-color: yellow;"><mark class="tm-mark" style="--tm-color: green;">car</mark>pet</mark> is an awesome object';
 
     expect(textMarker.text).toBe(expectedHtml);
 });
@@ -63,7 +63,7 @@ test('marking can go up to last character', () => {
     const textMarker = new TextMarker(text);
     textMarker.addMarking([15, 29], 'blue');
 
-    const expectedHtml = 'A carpet is an <mark style="background-color: blue;">awesome object</mark>';
+    const expectedHtml = 'A carpet is an <mark class="tm-mark" style="--tm-color: blue;">awesome object</mark>';
 
     expect(textMarker.text).toBe(expectedHtml);
 });
@@ -74,7 +74,7 @@ test('marking works if index is before first character', () => {
     const textMarker = new TextMarker(text);
     textMarker.addMarking([-1, 1], 'red');
 
-const expectedHtml = '<mark style="background-color: red;">A</mark> carpet is an awesome object';
+    const expectedHtml = '<mark class="tm-mark" style="--tm-color: red;">A</mark> carpet is an awesome object';
 
     expect(textMarker.text).toBe(expectedHtml);
 });
@@ -85,7 +85,7 @@ test('marking works if index is after last character', () => {
     const textMarker = new TextMarker(text);
     textMarker.addMarking([15, 29+1], 'blue');
 
-    const expectedHtml = 'A carpet is an <mark style="background-color: blue;">awesome object</mark>';
+    const expectedHtml = 'A carpet is an <mark class="tm-mark" style="--tm-color: blue;">awesome object</mark>';
 
     expect(textMarker.text).toBe(expectedHtml);
 });
