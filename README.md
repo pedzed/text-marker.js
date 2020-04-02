@@ -100,4 +100,4 @@ Contributions are welcome. Feel free to [create an issue](https://github.com/ped
 
 Found a security vulnerability? Email `security at pedzed.com`.
 
-**NOTE:** This library does not protect against XSS attacks. Be sure to pass colors that are safe.
+**NOTE:** This library does not protect against XSS attacks. Be sure to only pass down colors that are safe.
