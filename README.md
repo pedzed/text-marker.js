@@ -1,8 +1,8 @@
 # Text Marker
 
-![](https://img.shields.io/github/size/pedzed/text-marker.js/dist/text-marker.js)
-![](https://img.shields.io/npm/v/text-marker.js.svg)
-![](https://img.shields.io/npm/l/text-marker.js.svg)
+[![](https://img.shields.io/github/size/pedzed/text-marker.js/dist/text-marker.js)](dist/text-marker.js)
+[![](https://img.shields.io/npm/v/text-marker.js.svg)](https://www.npmjs.com/package/text-marker.js)
+[![](https://img.shields.io/npm/l/text-marker.js.svg)](LICENSE)
 
 _A lightweight, zero dependency JavaScript text marking library._
 
