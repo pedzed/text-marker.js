@@ -53,7 +53,7 @@ const formattedText = textMarker.getText();
 document.getElementById('example-text').write(formattedText);
 ```
 
-The HTML that resulted from it code is:
+The HTML that the code would generate:
 
 ```html
 <mark class="tm-mark" style="--tm-color: #f00">A</mark> <mark class="tm-mark" style="--tm-color: yellow"><mark class="tm-mark" style="--tm-color: rgb(0, 255, 0)">car</mark>pet</mark> is an <mark class="tm-mark" style="--tm-color: rgba(0, 0, 255, .65)">awesome object</mark>!
