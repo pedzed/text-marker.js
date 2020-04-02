@@ -1,3 +1,52 @@
+export default class TextMarker
+{
+    constructor(text)
+    {
+        this.rawText = text;
+        this.markings = [];
+    }
+
+    get text()
+    {
+        if (this.rawText === undefined) {
+            return this.rawText;
+        }
+
+        let formattedTextArray = [];
+
+        for (let i = 0; i < this.rawText.length; i++) {
+            const char = this.rawText[i];
+
+            formattedTextArray[i] = [char];
+
+            this.markings.reverse().forEach((marking) => {
+                if (marking.startIndex === i) {
+                    formattedTextArray[i].unshift(marking.openingMarker);
+                }
+
+                if (marking.endIndex === i + 1) {
+                    formattedTextArray[i].push(marking.closingMarker);
+                }
+            });
+        }
+
+        const formattedTextArrayFlattened = [].concat(...formattedTextArray);
+
+        const formattedText = formattedTextArrayFlattened.join('');
+
+        return formattedText;
+    }
+
+    addMarking(indexes, color)
+    {
+        const textSize = this.rawText.length;
+
+        this.markings.push(
+            new TextMarking(textSize, indexes, color)
+        );
+    }
+}
+
 class TextMarking
 {
     constructor(textSize, indexes, color)
@@ -47,54 +96,3 @@ class TextMarking
         return '</mark>';
     }
 }
-
-class TextMarker
-{
-    constructor(text)
-    {
-        this.rawText = text;
-        this.markings = [];
-    }
-
-    get text()
-    {
-        if (this.rawText === undefined) {
-            return this.rawText;
-        }
-
-        let formattedTextArray = [];
-
-        for (let i = 0; i < this.rawText.length; i++) {
-            const char = this.rawText[i];
-
-            formattedTextArray[i] = [char];
-
-            this.markings.reverse().forEach((marking) => {
-                if (marking.startIndex === i) {
-                    formattedTextArray[i].unshift(marking.openingMarker);
-                }
-
-                if (marking.endIndex === i + 1) {
-                    formattedTextArray[i].push(marking.closingMarker);
-                }
-            });
-        }
-
-        const formattedTextArrayFlattened = [].concat(...formattedTextArray);
-
-        const formattedText = formattedTextArrayFlattened.join('');
-
-        return formattedText;
-    }
-
-    addMarking(indexes, color)
-    {
-        const textSize = this.rawText.length;
-
-        this.markings.push(
-            new TextMarking(textSize, indexes, color)
-        );
-    }
-}
-
-export default TextMarker;
