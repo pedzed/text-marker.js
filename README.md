@@ -93,7 +93,7 @@ mark mark {
 
 ## Contributing
 
-Contributions are welcome. Feel free to create an issue or send a pull request.
+Contributions are welcome. Feel free to [create an issue](https://github.com/pedzed/text-marker.js/issues) or [send a pull request](https://github.com/pedzed/text-marker.js/pulls).
 
 
 ## Security
